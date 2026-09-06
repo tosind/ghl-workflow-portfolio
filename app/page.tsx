@@ -75,23 +75,24 @@ export default function Home() {
             </div>
           </div>
           <a
-            className="hero-art"
+            className="hero-art visual-cover"
             href="#work"
             aria-label="Explore the whitening offer workflow"
           >
             <div className="art-toolbar">
               <span>
-                <i /> WORKFLOW / 001
+                <i /> CONNECTED FOLLOW-UP
               </span>
-              <span>BUILT IN GHL ↗</span>
+              <span>EXPLORE THE WORK ↗</span>
             </div>
             <div className="hero-canvas">
               <Image
                 unoptimized
-                src="/ghl-whitening-workflow.png"
-                width="1050"
-                height="1341"
-                alt="Actual GoHighLevel workflow showing a whitening offer, reply checks, a second attempt, and intent-based SMS branches."
+                src="/ghl-message-panels.png"
+                width={1536}
+                height={1024}
+                alt=""
+                priority
               />
             </div>
             <div className="art-bottom">
@@ -159,29 +160,29 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Open original screenshot ↗
+                Explore the full workflow ↗
               </a>
               <p className="evidence">
-                Original workflow screenshot. Performance results and a live
-                demo are not yet included.
+                Built around timed follow-up, reply detection, and
+                positive-intent routing.
               </p>
             </div>
             <figure className="full-workflow">
               <div className="figure-heading">
-                <span>THE ACTUAL BUILD</span>
+                <span>WORKFLOW OVERVIEW</span>
                 <a
                   href="/ghl-whitening-workflow.png"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  View full size ↗
+                  View full build ↗
                 </a>
               </div>
               <a
                 href="/ghl-whitening-workflow.png"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Open full-resolution workflow screenshot"
+                aria-label="Explore the complete whitening offer workflow"
               >
                 <Image
                   unoptimized
@@ -189,7 +190,7 @@ export default function Home() {
                   width="1050"
                   height="1341"
                   loading="lazy"
-                  alt="Full original workflow: contact tag, Free Whitening Offer, wait for reply or one hour, reply branch with positive-intent check, or second attempt followed by another intent check."
+                  alt="Complete workflow: contact tag, Free Whitening Offer, wait for reply or one hour, reply branch with positive-intent check, or second attempt followed by another intent check."
                 />
               </a>
               <figcaption>
@@ -214,6 +215,28 @@ export default function Home() {
               trigger to the final message.
             </p>
           </div>
+          <figure className="routing-visual">
+            <Image
+              unoptimized
+              src="/ghl-reply-routing.png"
+              width={1536}
+              height={1024}
+              alt=""
+              loading="lazy"
+            />
+            <figcaption>
+              <p className="eyebrow">REPLY-BASED ROUTING</p>
+              <h3>
+                Different responses.
+                <br />
+                <em>Different next steps.</em>
+              </h3>
+              <p>
+                A positive reply moves toward next steps. No initial reply gets
+                a second attempt. Each path has a purpose.
+              </p>
+            </figcaption>
+          </figure>
           <div className="logic-grid">
             {logic.map(([n, title, body]) => (
               <article key={n}>

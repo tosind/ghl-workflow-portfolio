@@ -626,3 +626,80 @@ footer {
     transition: none !important;
   }
 }
+/* Generated editorial imagery complements the detailed project build. */
+.hero-art.visual-cover {
+  background: #102139;
+  border-color: #3c5067;
+  transform: none;
+  box-shadow: 0 22px 70px #0003;
+}
+.visual-cover .art-toolbar,
+.visual-cover .art-bottom {
+  background: #152a43;
+  color: #d3dfed;
+  border-color: #31455f;
+}
+.visual-cover .hero-canvas {
+  height: auto;
+  aspect-ratio: 3/2;
+  background: #102139;
+}
+.visual-cover .hero-canvas img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+.visual-cover .pill {
+  background: #c9f27b;
+  color: #243a17;
+}
+.routing-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #102139;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 0 42px;
+  color: #fff;
+  align-items: center;
+}
+.routing-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.routing-visual figcaption {
+  padding: 32px 40px;
+}
+.routing-visual .eyebrow {
+  color: #c9f27b;
+  margin-bottom: 18px;
+}
+.routing-visual h3 {
+  font-size: 32px;
+  margin: 0 0 18px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+.routing-visual p:last-child {
+  color: #bdc8d7;
+  font-size: 16px;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .routing-visual {
+    grid-template-columns: 1fr;
+  }
+  .routing-visual figcaption {
+    padding: 28px;
+  }
+  .routing-visual h3 {
+    font-size: 28px;
+  }
+  .visual-cover .hero-canvas {
+    height: auto;
+  }
+}
