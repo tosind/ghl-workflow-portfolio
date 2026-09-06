@@ -21,3 +21,8 @@ Edit `app/page.tsx` for content and `app/globals.css` for styling. Add the owner
 ## Validation
 
 Production build and scoped page/layout lint checks are run for updates. The original scaffold's full-project lint has issues in unused generated components. Its dependency audit reported 11 vulnerabilities (8 high); dependency remediation remains before public deployment.
+
+## Portfolio collection
+
+The page opens with four project cards: the supplied whitening-offer GHL build, plus clearly labeled demo designs for new-lead follow-up, appointment reminders, and client onboarding. Demo entries include sequence diagrams, conditions, team handoffs, and validation plans. They are not represented as deployed client work. Content lives in app/portfolio-projects.tsx.
+

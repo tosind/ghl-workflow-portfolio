@@ -703,3 +703,240 @@ footer {
     height: auto;
   }
 }
+.portfolio-section {
+  background: #f5f7fa;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+.portfolio-card {
+  border: 1px solid #d5dfe9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  transition: box-shadow 0.2s;
+}
+.portfolio-card:hover {
+  box-shadow: 0 16px 35px #10213912;
+}
+.card-map {
+  background: #e7edf8;
+  padding: 26px 30px 30px;
+  min-height: 280px;
+  background-image: radial-gradient(#92a6c838 0.8px, transparent 0.8px);
+  background-size: 16px 16px;
+}
+.offer-map {
+  background-color: #102139;
+  color: white;
+}
+.violet .card-map {
+  background-color: #ede9f5;
+}
+.green .card-map {
+  background-color: #e6eee8;
+}
+.map-kicker {
+  display: block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  margin-bottom: 24px;
+  color: #53647c;
+}
+.offer-map .map-kicker {
+  color: #c9f27b;
+}
+.mini-node {
+  background: white;
+  color: #1c304c;
+  border: 1px solid #becbda;
+  border-radius: 7px;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 16px;
+  max-width: 320px;
+  margin: auto;
+  box-shadow: 0 4px 10px #10213908;
+}
+.map-line {
+  display: block;
+  height: 20px;
+  width: 1px;
+  background: #9aacc2;
+  margin: auto;
+}
+.mini-branches {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+.mini-branches span {
+  font-size: 12px;
+  background: #ffffffd9;
+  color: #374e6a;
+  border: 1px solid #becbda;
+  border-radius: 6px;
+  padding: 9px 12px;
+  text-align: center;
+  flex: 1;
+}
+.offer-map .mini-branches span {
+  background: #d9efb9;
+  border-color: #c9f27b;
+  color: #213d18;
+}
+.portfolio-card-copy {
+  padding: 28px 30px;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: #677991;
+}
+.featured-card .card-meta > span:first-child {
+  color: #396825;
+}
+.portfolio-card h3 {
+  font-size: 27px;
+  letter-spacing: -0.8px;
+  margin: 18px 0 14px;
+}
+.portfolio-card-copy > p {
+  font-size: 15px;
+  color: #627085;
+  margin: 0;
+  line-height: 1.75;
+}
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+.project-tags span {
+  font-size: 12px;
+  border: 1px solid #d9e0e8;
+  border-radius: 4px;
+  padding: 4px 9px;
+  color: #64758b;
+}
+.project-open {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 0;
+  border-top: 1px solid #d9e0e8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.project-open:hover {
+  color: #365e9b;
+}
+.project-open::-webkit-details-marker {
+  display: none;
+}
+.project-details[open] .project-open {
+  padding-bottom: 20px;
+}
+.project-expanded {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 4px;
+}
+.project-expanded h4 {
+  font-size: 15px;
+  margin: 22px 0 9px;
+  font-weight: 650;
+}
+.project-expanded p,
+.project-expanded li {
+  font-size: 14px;
+  color: #627085;
+  line-height: 1.7;
+}
+.project-expanded .demo-context {
+  font-size: 12px;
+  color: #78869a;
+}
+.sequence {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: workflow;
+}
+.sequence li {
+  counter-increment: workflow;
+  border: 1px solid #d9e0e8;
+  margin-top: 8px;
+  padding: 10px 13px;
+  border-radius: 5px;
+  background: #f8fafc;
+}
+.sequence li:before {
+  content: counter(workflow, decimal-leading-zero);
+  color: #8798ad;
+  margin-right: 12px;
+  font-size: 12px;
+}
+.sequence span {
+  font-size: 11px;
+  margin-right: 10px;
+  color: #526e94;
+}
+.expanded-branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.expanded-branches p {
+  padding: 10px;
+  background: #ecf3e4;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.project-expanded ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+.featured {
+  border-top: 1px solid #d9e0e8;
+}
+.project-open:focus-visible {
+  outline: 3px solid #568a1d;
+  outline-offset: 5px;
+}
+@media (max-width: 700px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .portfolio-card-copy {
+    padding: 24px;
+  }
+  .card-map {
+    padding: 24px;
+    min-height: 270px;
+  }
+  .portfolio-card h3 {
+    font-size: 25px;
+  }
+  .mini-branches {
+    gap: 8px;
+  }
+  .mini-branches span {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .expanded-branches {
+    grid-template-columns: 1fr;
+  }
+}

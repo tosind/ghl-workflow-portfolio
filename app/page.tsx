@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import PortfolioProjects from './portfolio-projects';
 const logic = [
   [
     '01',
@@ -46,12 +47,12 @@ export default function Home() {
               <i /> GOHIGHLEVEL AUTOMATION
             </p>
             <h1>
-              A better follow-up.
+              Every stage.
               <br />
               <em>
-                Built into
+                A smarter
                 <br />
-                the workflow.
+                workflow.
               </em>
             </h1>
             <p className="intro">
@@ -70,14 +71,14 @@ export default function Home() {
               </span>
             </div>
             <div className="hero-foot">
-              <span>01 — FEATURED BUILD</span>
-              <span>Offer follow-up & reply routing</span>
+              <span>WORKFLOW COLLECTION</span>
+              <span>Leads · Appointments · Onboarding</span>
             </div>
           </div>
           <a
             className="hero-art visual-cover"
             href="#work"
-            aria-label="Explore the whitening offer workflow"
+            aria-label="Explore the workflow portfolio"
           >
             <div className="art-toolbar">
               <span>
@@ -96,7 +97,7 @@ export default function Home() {
               />
             </div>
             <div className="art-bottom">
-              <span>Whitening offer</span>
+              <span>Customer journeys, connected.</span>
               <span className="pill">Reply-based routing</span>
             </div>
           </a>
@@ -108,10 +109,11 @@ export default function Home() {
           <span>Reply conditions</span>
           <span>Intent branches</span>
         </div>
-        <section className="section featured" id="work">
+        <PortfolioProjects />
+        <section className="section featured" id="whitening-project">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">01 / SELECTED WORK</p>
+              <p className="eyebrow">FEATURED PROJECT / 01</p>
               <h2>
                 One offer.
                 <br />
