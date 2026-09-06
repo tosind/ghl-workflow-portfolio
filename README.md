@@ -27,3 +27,8 @@ Open the local URL printed by the server.
 - Update the page title in `app/layout.tsx`.
 
 The project uses React and Vinext. The production build targets a Workers-compatible runtime; the source repository by itself does not enable GitHub Pages.
+
+## Validation
+
+Production build and lint checks for the authored page and layout pass. Full-project lint reports existing issues in unused generated UI components. The starter dependency audit reports 11 vulnerabilities (8 high); dependency remediation remains before a public deployment.
+
