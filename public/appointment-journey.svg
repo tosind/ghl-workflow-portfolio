@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="title"><title id="title">Booked → ready to attend</title><rect width="1200" height="920" rx="20" fill="#102139"/><g font-family="Segoe UI,Arial,sans-serif"><text x="70" y="70" fill="#c9f27b" font-size="18" letter-spacing="2">03 / APPOINTMENT AUTOMATION · DEMO DESIGN</text><text x="70" y="128" fill="#ffffff" font-size="40">Booked → ready to attend</text>
+<rect x="250" y="175" width="700" height="70" rx="10" fill="#f5f7fa"/><text x="280" y="219" fill="#6d809a" font-size="18">01</text><text x="340" y="219" fill="#122139" font-size="24">Appointment booked</text>
+<path d="M600 245 V275" stroke="#8095b0" stroke-width="2"/>
+<rect x="250" y="275" width="700" height="70" rx="10" fill="#f5f7fa"/><text x="280" y="319" fill="#6d809a" font-size="18">02</text><text x="340" y="319" fill="#122139" font-size="24">Send confirmation</text>
+<path d="M600 345 V375" stroke="#8095b0" stroke-width="2"/>
+<rect x="250" y="375" width="700" height="70" rx="10" fill="#f5f7fa"/><text x="280" y="419" fill="#6d809a" font-size="18">03</text><text x="340" y="419" fill="#122139" font-size="24">Wait until reminder time</text>
+<path d="M600 445 V475" stroke="#8095b0" stroke-width="2"/>
+<rect x="250" y="475" width="700" height="70" rx="10" fill="#f5f7fa"/><text x="280" y="519" fill="#6d809a" font-size="18">04</text><text x="340" y="519" fill="#122139" font-size="24">Recheck booking status</text>
+<path d="M600 545 V575" stroke="#8095b0" stroke-width="2"/>
+<rect x="250" y="575" width="700" height="70" rx="10" fill="#f5f7fa"/><text x="280" y="619" fill="#6d809a" font-size="18">05</text><text x="340" y="619" fill="#122139" font-size="24">Send reminder when eligible</text>
+<path d="M600 645 V685 M310 685 H890 M310 685 V720 M890 685 V720" fill="none" stroke="#8095b0" stroke-width="2"/>
+<rect x="80" y="720" width="460" height="120" rx="12" fill="#c9f27b"/><rect x="660" y="720" width="460" height="120" rx="12" fill="#dce7f5"/><text x="310" y="768" text-anchor="middle" fill="#122139" font-size="25">Rescheduled</text><text x="310" y="804" text-anchor="middle" fill="#3f5a30" font-size="20">Use new appointment time</text><text x="890" y="768" text-anchor="middle" fill="#122139" font-size="25">Cancelled</text><text x="890" y="804" text-anchor="middle" fill="#455e7c" font-size="20">Stop reminders</text></g></svg>
