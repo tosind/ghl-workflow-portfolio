@@ -1,84 +1,26 @@
-const projects = [
-  {
-    n: '01',
-    title: 'From new lead to booked call.',
-    type: 'LEAD FOLLOW-UP',
-    desc: 'A clear path from an incoming enquiry to a conversation, with follow-up that stops when the lead responds.',
-    steps: [
-      'Form submitted',
-      'Check contact & consent',
-      'Send first response',
-      'Wait for reply',
-    ],
-    yes: 'Reply → notify owner',
-    no: 'No reply → follow up',
-    detail:
-      'Create or update the contact, assign an owner, and update the pipeline. Check reply, booking, and opt-out conditions before each follow-up.',
-  },
-  {
-    n: '02',
-    title: 'Keep the appointment moving.',
-    type: 'APPOINTMENT REMINDERS',
-    desc: 'Confirmation and reminders around the booking, with separate paths for cancellations and reschedules.',
-    steps: [
-      'Appointment booked',
-      'Send confirmation',
-      'Wait until reminder time',
-      'Check booking status',
-    ],
-    yes: 'Confirmed → reminder',
-    no: 'Cancelled → stop',
-    detail:
-      'Recheck appointment status before each reminder. Handle reschedules and cancellations, and update the opportunity after the appointment.',
-  },
-  {
-    n: '03',
-    title: 'Give older leads a next step.',
-    type: 'LEAD REACTIVATION',
-    desc: 'A controlled re-engagement sequence for eligible contacts, with replies routed back to a person.',
-    steps: [
-      'Eligible segment added',
-      'Check consent & exclusions',
-      'Send re-engagement message',
-      'Check engagement',
-    ],
-    yes: 'Interested → handoff',
-    no: 'No engagement → end',
-    detail:
-      'Exclude opted-out contacts and active opportunities. Keep the sequence bounded, stop on reply or opt-out, and create a task when someone wants to reconnect.',
-  },
+import Image from 'next/image';
+const logic = [
+  [
+    '01',
+    'Start with a tag',
+    'A contact tag triggers the workflow and the “Free Whitening Offer” message.',
+  ],
+  [
+    '02',
+    'Give the contact time',
+    'Wait until a reply arrives, or until the one-hour window ends.',
+  ],
+  [
+    '03',
+    'Choose the right branch',
+    'Check whether the contact replied. A reply moves to an intent check; otherwise, send a second attempt.',
+  ],
+  [
+    '04',
+    'Respond to intent',
+    'A positive/yes intent receives “Positive Reply – Next Steps.” The other branch receives a separate SMS.',
+  ],
 ];
-function Flow({
-  p,
-  compact = false,
-}: {
-  p: (typeof projects)[number];
-  compact?: boolean;
-}) {
-  return (
-    <div className={'flow ' + (compact ? 'compact' : '')}>
-      <div className="flow-label">
-        <i /> WORKFLOW MAP <span>CONCEPT</span>
-      </div>
-      {p.steps.map((s, i) => (
-        <div className="row" key={s}>
-          <div className="node">
-            <b>{['↳', '✓', '↗', '◇'][i]}</b>
-            <div>
-              <small>{['TRIGGER', 'CONDITION', 'ACTION', 'DECISION'][i]}</small>
-              <strong>{s}</strong>
-            </div>
-          </div>
-          {i < 3 && <div className="connector" />}
-        </div>
-      ))}
-      <div className="branches">
-        <div>{p.yes}</div>
-        <div>{p.no}</div>
-      </div>
-    </div>
-  );
-}
 export default function Home() {
   return (
     <>
@@ -87,11 +29,11 @@ export default function Home() {
       </a>
       <header id="top">
         <a className="brand" href="#top">
-          <b>↳</b> Workflow portfolio <small>DRAFT</small>
+          <b>↳</b> Workflow portfolio
         </a>
-        <nav>
+        <nav aria-label="Main navigation">
           <a href="#work">Selected work</a>
-          <a href="#approach">Approach</a>
+          <a href="#logic">The logic</a>
           <a className="outline" href="#connect">
             Let’s connect ↗
           </a>
@@ -99,149 +41,231 @@ export default function Home() {
       </header>
       <main>
         <section className="hero">
-          <div>
+          <div className="hero-copy">
             <p className="eyebrow">
-              <i /> GOHIGHLEVEL / CRM AUTOMATION
+              <i /> GOHIGHLEVEL AUTOMATION
             </p>
             <h1>
-              Less chasing.
+              A better follow-up.
               <br />
-              More{' '}
               <em>
-                moving
+                Built into
                 <br />
-                forward.
+                the workflow.
               </em>
             </h1>
             <p className="intro">
-              Lead follow-up, appointment journeys, and thoughtful handoffs.
-              Explore the logic behind workflows that keep the next step clear.
+              I build GoHighLevel workflows that turn a single message into a
+              considered customer journey—with timing, reply checks, and a clear
+              next step.
             </p>
             <div className="actions">
               <a className="button" href="#work">
-                Explore the workflows ↘
+                Explore my work <span>↘</span>
               </a>
-              <a href="#connect">For clients & hiring teams ↗</a>
+              <span className="audience">
+                For businesses.
+                <br />
+                For growing teams.
+              </span>
             </div>
-            <p className="note">
-              Portfolio in progress · Illustrative concepts below
-            </p>
-          </div>
-          <div className="hero-art">
-            <div className="art-label">
-              <span>THE NEXT STEP, CONNECTED.</span>
-              <span>01 / 03</span>
-            </div>
-            <Flow p={projects[0]} compact />
-            <div className="art-label caption">
-              <span>From enquiry</span>
-              <span>to a human conversation ↗</span>
+            <div className="hero-foot">
+              <span>01 — FEATURED BUILD</span>
+              <span>Offer follow-up & reply routing</span>
             </div>
           </div>
+          <a
+            className="hero-art"
+            href="#work"
+            aria-label="Explore the whitening offer workflow"
+          >
+            <div className="art-toolbar">
+              <span>
+                <i /> WORKFLOW / 001
+              </span>
+              <span>BUILT IN GHL ↗</span>
+            </div>
+            <div className="hero-canvas">
+              <Image
+                unoptimized
+                src="/ghl-whitening-workflow.png"
+                width="1050"
+                height="1341"
+                alt="Actual GoHighLevel workflow showing a whitening offer, reply checks, a second attempt, and intent-based SMS branches."
+              />
+            </div>
+            <div className="art-bottom">
+              <span>Whitening offer</span>
+              <span className="pill">Reply-based routing</span>
+            </div>
+          </a>
         </section>
         <div className="strip">
-          <strong>GOHIGHLEVEL</strong>
-          <span>Workflow logic</span>
-          <span>CRM pipelines</span>
-          <span>Customer journeys</span>
-          <span>Team handoffs</span>
+          <strong>FROM TRIGGER TO NEXT STEP</strong>
+          <span>Contact tags</span>
+          <span>Timed waits</span>
+          <span>Reply conditions</span>
+          <span>Intent branches</span>
         </div>
-        <section className="section" id="work">
+        <section className="section featured" id="work">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">SELECTED WORKFLOW CONCEPTS</p>
-              <h2>Make the logic visible.</h2>
+              <p className="eyebrow">01 / SELECTED WORK</p>
+              <h2>
+                One offer.
+                <br />
+                <em>More than one path.</em>
+              </h2>
             </div>
             <p>
-              Three example journeys. These are illustrative designs, not
-              verified client projects or screenshots from a live GHL account.
+              A whitening-offer workflow built in GoHighLevel. The follow-up
+              changes depending on whether someone responds and whether their
+              reply is positive.
             </p>
           </div>
-          {projects.map((p) => (
-            <article className="project" key={p.n}>
-              <div>
-                <p className="eyebrow">
-                  <span>{p.n}</span> {p.type}
-                </p>
-                <h3>{p.title}</h3>
-                <p className="description">{p.desc}</p>
-                <div className="tags">
-                  <span>GoHighLevel</span>
-                  <span>Concept design</span>
+          <div className="case-grid">
+            <div className="case-copy">
+              <span className="project-label">OFFER FOLLOW-UP</span>
+              <h3>
+                Whitening offer
+                <br />
+                response workflow
+              </h3>
+              <p>
+                The aim: give each contact a relevant next message, while
+                keeping the initial follow-up sequence organized.
+              </p>
+              <dl>
+                <div>
+                  <dt>Platform</dt>
+                  <dd>GoHighLevel</dd>
                 </div>
-                <details>
-                  <summary>
-                    Explore the workflow <span>＋</span>
-                  </summary>
-                  <p>{p.detail}</p>
-                  <p className="note">
-                    Live demo and measured results have not been added.
-                  </p>
-                </details>
+                <div>
+                  <dt>Entry point</dt>
+                  <dd>Contact tag</dd>
+                </div>
+                <div>
+                  <dt>First wait</dt>
+                  <dd>Reply or 1 hour</dd>
+                </div>
+                <div>
+                  <dt>Routing</dt>
+                  <dd>Reply + positive intent</dd>
+                </div>
+              </dl>
+              <a
+                className="dark-button"
+                href="/ghl-whitening-workflow.png"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open original screenshot ↗
+              </a>
+              <p className="evidence">
+                Original workflow screenshot. Performance results and a live
+                demo are not yet included.
+              </p>
+            </div>
+            <figure className="full-workflow">
+              <div className="figure-heading">
+                <span>THE ACTUAL BUILD</span>
+                <a
+                  href="/ghl-whitening-workflow.png"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View full size ↗
+                </a>
               </div>
-              <Flow p={p} />
-            </article>
-          ))}
+              <a
+                href="/ghl-whitening-workflow.png"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open full-resolution workflow screenshot"
+              >
+                <Image
+                  unoptimized
+                  src="/ghl-whitening-workflow.png"
+                  width="1050"
+                  height="1341"
+                  loading="lazy"
+                  alt="Full original workflow: contact tag, Free Whitening Offer, wait for reply or one hour, reply branch with positive-intent check, or second attempt followed by another intent check."
+                />
+              </a>
+              <figcaption>
+                Contact tag → offer → wait → reply check → intent-based
+                messages.
+              </figcaption>
+            </figure>
+          </div>
         </section>
-        <section className="section approach" id="approach">
-          <p className="eyebrow">THE APPROACH</p>
-          <h2>
-            A workflow needs
-            <br />
-            more than a trigger.
-          </h2>
-          <div className="principles">
-            {[
-              [
-                '01',
-                'Map the journey',
-                'Define the entry point, the desired next step, and who takes over.',
-              ],
-              [
-                '02',
-                'Account for the exceptions',
-                'Plan for replies, duplicate entries, cancellations, and opt-outs.',
-              ],
-              [
-                '03',
-                'Test the whole path',
-                'Use test contacts to check timing, branches, messages, and handoffs.',
-              ],
-            ].map(([n, t, d]) => (
-              <div key={n}>
-                <span>{n}</span>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </div>
+        <section className="section logic" id="logic">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">BEHIND THE BUILD</p>
+              <h2>
+                The decisions
+                <br />
+                <em>make the difference.</em>
+              </h2>
+            </div>
+            <p>
+              A readable breakdown of the workflow shown above, from the first
+              trigger to the final message.
+            </p>
+          </div>
+          <div className="logic-grid">
+            {logic.map(([n, title, body]) => (
+              <article key={n}>
+                <span className="step-number">{n}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
             ))}
+          </div>
+          <div className="route-summary">
+            <span className="route-label">AT THE FIRST REPLY CHECK</span>
+            <div>
+              <span className="route-tag">REPLIED</span>
+              <p>
+                Check positive intent <b>→</b> Next steps or alternate SMS
+              </p>
+            </div>
+            <div>
+              <span className="route-tag secondary">NO REPLY</span>
+              <p>
+                Second attempt <b>→</b> Wait for reply <b>→</b> Check positive
+                intent
+              </p>
+            </div>
           </div>
         </section>
         <section className="section connect" id="connect">
           <div>
-            <p className="eyebrow">FOR CLIENTS & HIRING TEAMS</p>
+            <p className="eyebrow">PROJECTS & OPPORTUNITIES</p>
             <h2>
-              Let’s talk about
+              Good follow-up
               <br />
-              the next workflow.
+              starts with
+              <br />
+              <em>a conversation.</em>
             </h2>
           </div>
-          <div>
+          <div className="connect-copy">
             <p>
-              For project enquiries or CRM automation opportunities, this
-              section will contain the portfolio owner’s contact details and
-              professional links.
+              Looking for help with a GoHighLevel workflow, or adding CRM
+              automation skills to your team?
             </p>
             <p className="pending">Contact details coming soon.</p>
-            <p className="note">
-              This draft is awaiting the owner’s name, real project examples,
-              and contact information.
-            </p>
+            <span className="evidence">Portfolio in progress.</span>
           </div>
         </section>
       </main>
       <footer>
-        <span>↳ Workflow portfolio</span>
-        <span>GoHighLevel automation · Portfolio draft</span>
+        <a className="brand" href="#top">
+          ↳ Workflow portfolio
+        </a>
+        <span>GoHighLevel · Selected work</span>
         <a href="#top">Back to top ↑</a>
       </footer>
     </>

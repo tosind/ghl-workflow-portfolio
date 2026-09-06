@@ -1,34 +1,23 @@
 # GoHighLevel Workflow Portfolio
 
-Responsive portfolio draft for prospective clients and employers. Three original workflow diagrams illustrate lead follow-up, appointment reminders, and reactivation. Expand each project to read its logic.
+A responsive portfolio for clients and hiring teams, featuring the owner's actual whitening-offer workflow screenshot.
 
-## Status
+## Featured work
 
-All examples are explicitly labeled concepts. No client claims, performance metrics, personal details, or live GHL screenshots are included. Replace these with verified work before using the page in applications or outreach.
+Contact-tag trigger → Free Whitening Offer → wait for reply or one hour → reply check → positive-intent routing. The no-reply branch sends a second attempt, waits for a reply, and checks positive intent. Descriptions are based on the supplied screenshot, without performance claims or assumptions about settings not shown.
 
-## Run locally
+The original screenshot is preserved in `public/ghl-whitening-workflow.png`. Visitors can open it at full resolution. No generated concept projects remain on the page.
+
+## Local development
 
 Requires Node.js 22.13 or newer.
 
     npm ci
     npm run dev
-
-Open the local URL printed by the server.
-
     npm run build
-    npm run lint
 
-## Personalize
-
-- Edit `app/page.tsx`: owner name, contact links, project descriptions, and actual workflow steps.
-- Put redacted screenshots and demo assets in `public/` and reference them in the project entries.
-- Add genuine demo links and documented results when available.
-- Edit `app/globals.css` for the palette and layout.
-- Update the page title in `app/layout.tsx`.
-
-The project uses React and Vinext. The production build targets a Workers-compatible runtime; the source repository by itself does not enable GitHub Pages.
+Edit `app/page.tsx` for content and `app/globals.css` for styling. Add the owner's name and contact details before outreach. Runtime: React and Vinext on a Workers-compatible target; uploading source does not activate GitHub Pages.
 
 ## Validation
 
-Production build and lint checks for the authored page and layout pass. Full-project lint reports existing issues in unused generated UI components. The starter dependency audit reports 11 vulnerabilities (8 high); dependency remediation remains before a public deployment.
-
+Production build and scoped page/layout lint checks are run for updates. The original scaffold's full-project lint has issues in unused generated components. Its dependency audit reported 11 vulnerabilities (8 high); dependency remediation remains before public deployment.
